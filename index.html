@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio showcase featuring web development projects, skills in HTML, CSS, JavaScript, C#, and more. Explore my work in financial tools, loan processing, and automated testing.">
+    <meta name="keywords" content="portfolio, web developer, HTML, CSS, JavaScript, C#, projects, skills">
+    <meta name="author" content="T. Lyons">
+    <meta property="og:title" content="My Portfolio">
+    <meta property="og:description" content="Professional portfolio showcasing web development expertise and projects">
+    <meta property="og:type" content="website">
+    <title>My Portfolio | Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header role="banner">
+    <h1>My Portfolio!</h1>
+    <nav role="navigation" aria-label="Main navigation">
+        <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu">
+        <label for="nav-toggle" class="hamburger" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main role="main">
+    <article id="main-content">
+        <h2>Main Content</h2>
+        <p>Welcome to my professional portfolio website. As a dedicated web 
+            developer, I specialize in creating dynamic and user-friendly web 
+            applications using modern technologies. This site showcases my 
+            journey, featuring a collection of projects that demonstrate my 
+            expertise in HTML, CSS, JavaScript, and backend development. 
+            Whether you're here to explore my work, learn about my skills, 
+            or get in touch for potential collaborations, I invite you to 
+            navigate through the sections below and discover what I can bring 
+            to your next project.</p>
+    </article>
+
+    <section id="about-me" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <p>I am a passionate developer with a strong interest in creating meaningful 
+            web experiences. I enjoy working with modern technologies and continuously 
+            learning new skills to improve my craft.</p>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+        
+        <div class="projects-container">
+            <article class="project-card">
+                <h3>Tax Deductible Interest Calculator</h3>
+                <figure>
+                    <img src="photos/photo-TaxCalculator.jpg" alt="Tax calculator displaying financial charts and deduction calculations" tabindex="0">
+                    <p>A financial tool designed to calculate and track tax-deductible 
+                        interest payments. This application helps users identify eligible 
+                        interest expenses and optimize their tax deductions.</p>
+                </figure>
+            </article>
+            
+            <article class="project-card">
+                <h3>Loan On and Off-Boarding Process</h3>
+                <figure>
+                    <img src="photos/photo-OnOffBoarding.jpg" alt="Business documents and workflow process diagram" tabindex="0">
+                    <p>A comprehensive system for managing the complete loan lifecycle, 
+                        from initial application through final closure. Streamlines 
+                        document collection, verification, and approval workflows.</p>
+                </figure>
+            </article>
+            
+            <article class="project-card">
+                <h3>Automated Testing Application</h3>
+                <figure>
+                    <img src="photos/photo-AutomatedTesting.png" alt="Software testing interface with code and test results" tabindex="0">
+                    <p>A robust testing framework for automating quality assurance 
+                        processes. Reduces manual testing effort and improves software 
+                        reliability through continuous integration testing.</p>
+                </figure>
+            </article>
+            
+            <article class="project-card">
+                <h3>General Ledger Billing Process</h3>
+                <figure>
+                    <img src="photos/photo-GeneralLedger.jpg" alt="Financial ledger spreadsheet with accounting data and calculations" tabindex="0">
+                    <p>An accounting system that automates the billing and reconciliation 
+                        process. Ensures accurate financial records and streamlined 
+                        reporting for business operations.</p>
+                </figure>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>C#</li>
+            <li>COBOL</li>
+            <li>IBM RPGLE</li>
+            <li>Git & Version Control</li>
+            <li>Responsive Web Design</li>
+            <li>REST APIs</li>
+            <li>SQL</li>
+            <li>Testing & Debugging</li>
+            <li>Problem Solving</li>
+        </ul>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <form role="form" aria-label="Contact form">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required aria-required="true">
+                <div id="name-error" class="error-message" aria-live="polite"></div>
+            </div>
+            
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true">
+                <div id="email-error" class="error-message" aria-live="polite"></div>
+            </div>
+            
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                <div id="message-error" class="error-message" aria-live="polite"></div>
+            </div>
+            
+            <button type="submit" aria-label="Send contact message">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<footer role="contentinfo">
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+</footer>
+
+<div id="lightbox" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-label="Project image preview">
+    <div class="lightbox-content">
+        <button type="button" class="lightbox-close" aria-label="Close image preview">×</button>
+        <img src="" alt="" class="lightbox-image">
+        <p class="lightbox-caption"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,653 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+    background-color: #2a2a2a;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+h2 {
+    text-align: center;
+}
+
+nav {
+    background-color: #1a1a1a;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    position: relative;
+}
+
+nav .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+}
+
+nav .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #e0e0e0;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+nav input[type="checkbox"] {
+    display: none;
+}
+
+nav input[type="checkbox"]:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+nav input[type="checkbox"]:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+nav input[type="checkbox"]:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#about-me {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #333333;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#about-me h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+#about-me p {
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #e0e0e0;
+}
+
+#main-content {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #333333;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#main-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+#main-content p {
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #e0e0e0;
+}
+
+#contact {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #333333;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact label {
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+#contact input,
+#contact textarea {
+    padding: 0.5rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+#contact button {
+    padding: 0.75rem;
+    background-color: #555;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #777;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem 0;
+    }
+
+    nav .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    nav.menu-open ul,
+    nav input[type="checkbox"]:checked ~ ul {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+}
+
+
+.projects {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+.projects h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.project-card figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #222;
+}
+
+.project-card figure img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card figure img:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 1.5rem;
+    z-index: 1000;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 100%;
+    text-align: center;
+}
+
+.lightbox-image {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    margin-top: 0.75rem;
+    color: #f0f0f0;
+    font-size: 0.95rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .lightbox-content {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .lightbox-image {
+        max-height: 70vh;
+    }
+}
+
+.project-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    background-color: #333333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #00d4ff;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.project-card a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.project-card a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #b0b0b0;
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+#skills {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #333333;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#skills h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+#skills li {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: #2a2a2a;
+    border-radius: 6px;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+#skills li:hover {
+    background-color: #404040;
+}
+
+#skills li::before {
+    content: "💻";
+    margin-right: 0.75rem;
+    font-size: 1.2em;
+}
+
+/* Specific icons for each skill */
+#skills li:nth-child(1)::before { content: "🌐"; } /* HTML */
+#skills li:nth-child(2)::before { content: "🎨"; } /* CSS */
+#skills li:nth-child(3)::before { content: "⚡"; } /* JavaScript */
+#skills li:nth-child(4)::before { content: "🔷"; } /* C# */
+#skills li:nth-child(5)::before { content: "📜"; } /* COBOL */
+#skills li:nth-child(6)::before { content: "🖥️"; } /* IBM RPGLE */
+#skills li:nth-child(7)::before { content: "🔄"; } /* Git & Version Control */
+#skills li:nth-child(8)::before { content: "📱"; } /* Responsive Web Design */
+#skills li:nth-child(9)::before { content: "🔗"; } /* REST APIs */
+#skills li:nth-child(10)::before { content: "🗄️"; } /* SQL */
+#skills li:nth-child(11)::before { content: "🧪"; } /* Testing & Debugging */
+#skills li:nth-child(12)::before { content: "🧠"; } /* Problem Solving */
+
+/* Media Queries for Responsive Design */
+
+/* Tablet and smaller screens (up to 1024px) */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    .projects-container {
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        min-width: 250px;
+        max-width: 280px;
+    }
+
+    #skills ul {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Mobile screens (up to 768px) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #1a1a1a;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    nav input[type="checkbox"]:checked ~ ul {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav a {
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    #about-me,
+    #main-content,
+    #contact,
+    #skills {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+
+    #about-me p,
+    #main-content p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .projects {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        min-width: 280px;
+        max-width: 100%;
+    }
+
+    #skills ul {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    #skills li {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Small mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header {
+        padding: 1.5rem 0;
+    }
+
+    nav {
+        padding: 0.75rem 0;
+    }
+
+    nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    #about-me,
+    #main-content,
+    #contact,
+    #skills {
+        margin: 1.5rem 0.5rem;
+        padding: 1rem;
+    }
+
+    #about-me h2,
+    #main-content h2,
+    #contact h2,
+    #skills h2,
+    .projects h2 {
+        font-size: 1.5rem;
+    }
+
+    #about-me p,
+    #main-content p {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        padding: 1rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+
+    #contact input,
+    #contact textarea {
+        font-size: 0.9rem;
+    }
+
+    #contact button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
